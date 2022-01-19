@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Speedometer from './components/speedometer/speedometer';
 
 function App() {
+
+  // const [data, setData] = useState([180, 60, 120, 20, 40, 160])
+  const [data, setData] = useState([180])
+  const [randomCount, setRandomCount] = useState(0)
+  const [maxSpeed, setMaxSpeed] = useState(0)
+  
+  const changeNum = () => {
+    setRandomCount(data[Math.floor(Math.random() * data.length)])
+  }
+
+  useEffect(() => {
+    changeNum() 
+  }, [randomCount])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input type="number" min="20" onChange={(e) => setMaxSpeed(e.target.value)}/>
+      <Speedometer
+      speeds={ data }
+      randomCount={ randomCount }
+      changeNum={ changeNum }
+      maxSpeed={maxSpeed}
+      />
+    </>
   );
 }
 

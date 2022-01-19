@@ -1,0 +1,80 @@
+#rotate_180{
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;    
+    border-left: 20px solid rgba(255, 255, 255, 0);
+    border-right: 20px solid rgb(144, 140, 140);
+    border-top: 20px solid rgba(255, 255, 255, 0);
+    border-bottom: 20px solid rgb(144, 140, 140);
+    border-radius: 50%;
+    margin: 20px;
+    transform: rotate(-135deg);
+    /* border: 2px solid; */
+}
+svg{
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    position: absolute;
+    left: 28%;
+    top: 24%;
+    transition: 1s;
+}
+.block{
+    position: relative;
+    left: 50%;
+}
+h1{
+    transform: rotate(135deg);
+    position: absolute;
+    top: 20%;
+    left: 30%;  
+    font-size: 25px;
+}
+#mid h3{
+    transform: rotate(135deg);
+    position: fixed;
+}
+
+#rotate_180 #mid h3:first-child{
+    top: -5%;
+    left: 95%;
+}
+#rotate_180 #mid h3:nth-child(2){
+    top: 10%;
+    left: 105%;
+}
+#rotate_180 #mid h3:nth-child(3){
+    top: 29%;
+    left: 111%;
+}
+#rotate_180 #mid h3:nth-child(4){
+    top: 54%;
+    left: 108%;
+}
+#rotate_180 #mid h3:nth-child(5){
+    top: 72%;
+    left: 100%;
+}
+#rotate_180 #mid h3:nth-child(6){
+    top: 89%;
+    left: 83%;
+}
+#rotate_180 #mid h3:nth-child(7){
+    top: 100%;
+    left: 63%;
+}
+#rotate_180 #mid h3:nth-child(8){
+    top: 104%;
+    left: 40%;
+}
+#rotate_180 #mid h3:nth-child(9){
+    top: 100%;
+    left: 18%;
+}
+#rotate_180 #mid h3:nth-child(10){
+    top: 87%;
+    left: -1%;
+}
