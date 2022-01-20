@@ -16,7 +16,7 @@
 }
 svg{
     /* transform: rotate(90deg); */
-    transform-origin: bottom right;
+    transform-origin: bottom center;
     position: absolute;
     left: 28%;
     top: 24%;
@@ -27,29 +27,30 @@ svg{
 }
 h1{
     position: absolute;
-    top: 37%;
-    left: 24%;  
+    top: 55%;
+    left: 40%;  
     font-size: 25px;
 }
 
 #first{
+  fill: transparent;
     top: 19.8%;
     left: 1.7%;
   }
   #second{
-    fill: yellow;
-    top: 12.2%;
-    left: 14.1%;
+    /* fill: yellow; */
+    top: 7.9%;
+    left: 15.7%;
   }
   #third{
-    fill: orange;
-    top: 12.2%;
-    left: 45.5%;
+    /* fill: orange; */
+    top: 7.9%;
+    left: 45.7%;
   }
   #fourth{
-    fill: red;
+    /* fill: red; */
     top: 19.8%;
-    left: 65.5%;
+    left: 69.5%;
   }
   .speedometer{
     position: relative;

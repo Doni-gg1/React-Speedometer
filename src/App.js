@@ -5,7 +5,7 @@ import Speedometer from './components/speedometer/speedometer';
 function App() {
 
   // const [data, setData] = useState([180, 60, 120, 20, 40, 160])
-  const [data, setData] = useState([60])
+  const [data, setData] = useState([50])
   const [randomCount, setRandomCount] = useState(0)
   const [maxSpeed, setMaxSpeed] = useState(0)
   const [speedsNumCount, setSpeedsNumCount] = useState(0)

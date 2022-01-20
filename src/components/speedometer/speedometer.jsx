@@ -6,35 +6,36 @@ function Speedometer({ randomCount, changeNum, maxSpeed, speedsNumCount }) {
   const [value, setValue] = useState(0);
   const [randomNum, setRandomNum] = useState(randomCount);
 
-  let mid = document.querySelector('#mid');
+  let mid = document.querySelector("#mid");
 
   const showSpeedNums = (data) => {
-    data.forEach(item => {
-      let h3 = document.createElement('h3');
+    data.forEach((item) => {
+      let h3 = document.createElement("h3");
       h3.innerHTML = item;
       mid.append(h3);
-    })
-  }
+    });
+  };
   const countRange = () => {
     let range = 0;
-    if(maxSpeed && speedsNumCount){
-      if(maxSpeed >= speedsNumCount){
-        let sum = 0
-        let arrRange = []
-        range = maxSpeed / speedsNumCount
-        mid.innerHTML = '';
-        for(let i = 1; i < speedsNumCount; i++){
-          sum += range
-          arrRange.push(Math.ceil(sum))
+    if (maxSpeed && speedsNumCount) {
+      if (maxSpeed >= speedsNumCount) {
+        let sum = 0;  
+        let arrRange = [];
+        range = maxSpeed / speedsNumCount;
+        mid.innerHTML = "";
+        for (let i = 1; i < speedsNumCount; i++) {
+          sum += range;
+          arrRange.push(Math.ceil(sum));
         }
-        arrRange.unshift(0)
-        arrRange.push(maxSpeed)
-        showSpeedNums(arrRange)
-      }
-      else alert("Кол-во ячеек не должено превышать максимальную скорость")
+        arrRange.unshift(0);
+        arrRange.push(maxSpeed);
+        showSpeedNums(arrRange);
+      } else
+        return console.log(
+          "Кол-во ячеек не должено превышать максимальную скорость"
+        );
     }
   };
-
 
   const counter = () => {
     if (maxSpeed >= 20) {
@@ -47,7 +48,7 @@ function Speedometer({ randomCount, changeNum, maxSpeed, speedsNumCount }) {
         // setValue(0);
       }
     } else {
-      setValue(0);
+      // setValue(0);
     }
   };
 
@@ -62,77 +63,83 @@ function Speedometer({ randomCount, changeNum, maxSpeed, speedsNumCount }) {
       <div className="block">
         <div className="speedometer">
           <svg
-          id="first"
-          width="122"
-          height="102"
-          viewBox="0 0 61 51"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="myGradient" gradientTransform="rotate(100)">
-              <stop offset={ (maxSpeed/90) * (Math.ceil(maxSpeed/value)) + '%'} stop-color="white" />
-              <stop offset="0%" stop-color="green" />
-            </linearGradient>
-          </defs>
-          <path
-            fill="url('#myGradient')"
-            d="M28.5 50L1 49L1.5 44.5L2.5 40L4 36L5.5 32.5L7 29L9 25L12.5 20L15 17L18.5 13.5L23.5 9L28.5 5L34 1L59.5 14L55 16.5L50.5 19.5L46 23L42.5 26.5L38.5 30.5L35.5 34.5L33 39L32.5 40L32 41L31 43.5L28.5 50Z"
-            stroke="black"
-          />
-          </svg>
-          <svg
-          id="second"
-          width="160"
-          height="70"
-          viewBox="0 0 80 35"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M79.5 1V22H71L59.5 23L53 24L46 25.5L40 27.5L36.5 29L34 30L30 32L27.5 33.5L2 20.5L12.5 15L22 11L24.5 10L27.5 9L32 7.5L38 5.5L44 4L51.5 2.5L58 1.5L62.5 1H67H73H79.5Z"
-            stroke="black"
-          />
-          </svg>
-          <svg
-          id="third"
-          width="160"
-          height="70"
-          viewBox="0 0 80 35"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1 1V22H9.5L21 23L27.5 24L34.5 25.5L40.5 27.5L44 29L46.5 30L50.5 32L53 33.5L78.5 20.5L68 15L58.5 11L56 10L53 9L48.5 7.5L42.5 5.5L36.5 4L29 2.5L22.5 1.5L18 1H13.5H7.5H1Z"
-            stroke="black"
-          />
-          </svg>
-          <svg
-          id="fourth"
-          width="124"
-          height="102"
-          viewBox="0 0 62 51"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M33 50L60.5 49L60 44.5L59 40L57.5 36L56 32.5L54.5 29L52.5 25L49 20L46.5 17L43 13.5L38 9L33 5L27.5 1L2 14L6.5 16.5L11 19.5L15.5 23L19 26.5L23 30.5L26 34.5L28.5 39L29 40L29.5 41L30.5 43.5L33 50Z"
-            stroke="black"
-          />
-          </svg>
-        </div>
-        <div>
-          <Arrow value={value} maxSpeed={maxSpeed} />
-          <h1>{value}</h1>
-        </div>
+            id="first"
+            width="104"
+            height="162"
+            viewBox="0 0 52 81"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="myGradient" gradientTransform="rotate(-30)">
+                
+                <stop offset={100 * 2 / (maxSpeed / value) + "%"} stop-color="green" />
+                <stop offset="0%" stop-color="white"/>
+              </linearGradient>
+            </defs>
 
-        
-          
-        
-      </div>
-        <div id="mid">
-            
+            <path
+              fill="url('#myGradient')"
+              d="M2 79.5L22.9999 80V76L23.4999 71L23.9999 68L24.4999 64L25.4999 59.5L26.9999 54L28.4999 49.5L30.4999 45L32.5 41L34.5 37L37 33L39 30L41.5 27L43.5 24.5L46.5 21L49 18.5L51 16.5L35.5 1L33 3.5L30.4999 6L28.9999 7.5L27.4999 9L25.4999 11.5L23.4999 14L21.4999 17L19.4999 19.5L15.4999 26L11.9999 32.5L8.99995 39L6.99995 44L5.49995 48.5L3.99995 54L2.49994 61L1.99994 64L1.49995 67L0.999939 70L0.499939 73V73.5V74V74.5V75V75.5V76.5V77.5V79.5H2Z"
+              stroke="black"
+            />
+          </svg>
+
+          <svg
+            id="second"
+            width="152"
+            height="94"
+            viewBox="0 0 76 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="myGradient2" gradientTransform="rotate(-1)">
+              <stop offset={100 * 2 / ( maxSpeed / value / 2 ) + "%"} stop-color="yellow" />
+                <stop offset="0%" stop-color="white"/>
+              </linearGradient>
+            </defs>
+            <path 
+            fill="url('#myGradient2')"
+              d="M1 30.5L16.5 46L21 42L25 39L29 36.5L34 33.5L37 32L41.5 30L46.5 28L51 26.5L57 25L62 24L67 23.5L72 23H75.5V1L64 1.5L57 2.5L52 3.5L46 5L42.5 6L38 7.5L32 10L28.5 11.5L23 14.5L18.5 17L13 20.5L10.5 22.5L8 24.5L5.5 26.5L3 28.5L1 30.5Z"
+              stroke="black"
+            />
+          </svg>
+
+          <svg
+            id="third"
+            width="154"
+            height="94"
+            viewBox="0 0 77 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M75.5 30.5L60 46L55.5 42L51.5 39L47.5 36.5L42.5 33.5L39.5 32L35 30L30 28L25.5 26.5L19.5 25L14.5 24L9.5 23.5L4.5 23H1V1L12.5 1.5L19.5 2.5L24.5 3.5L30.5 5L34 6L38.5 7.5L44.5 10L48 11.5L53.5 14.5L58 17L63.5 20.5L66 22.5L68.5 24.5L71 26.5L73.5 28.5L75.5 30.5Z"
+              stroke="black"
+            />
+          </svg>
+
+          <svg
+            id="fourth"
+            width="104"
+            height="162"
+            viewBox="0 0 52 81"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M49.9999 79.5L29 80V76L28.5 71L28 68L27.5 64L26.5 59.5L25 54L23.5 49.5L21.5 45L19.5 41L17.5 37L15 33L13 30L10.5 27L8.49998 24.5L5.49998 21L2.99998 18.5L0.999985 16.5L16.5 1L19 3.5L21.5 6L23 7.5L24.5 9L26.5 11.5L28.5 14L30.5 17L32.5 19.5L36.5 26L40 32.5L43 39L45 44L46.5 48.5L48 54L49.5 61L50 64L50.5 67L51 70L51.5 73V73.5V74V74.5V75V75.5V76.5V77.5V79.5H49.9999Z"
+              stroke="black"
+            />
+          </svg>
+          <div>
+            <Arrow value={value} maxSpeed={maxSpeed} />
+            <h1>{value}</h1>
           </div>
+        </div>
+      </div>
+      <div id="mid"></div>
     </div>
   );
 }
