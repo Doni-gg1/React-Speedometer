@@ -33,22 +33,22 @@ h1{
 }
 
 #first{
-  fill: transparent;
+  fill: green;
     top: 19.8%;
     left: 1.7%;
   }
   #second{
-    /* fill: yellow; */
+    fill: yellow;
     top: 7.9%;
     left: 15.7%;
   }
   #third{
-    /* fill: orange; */
+    fill: orange;
     top: 7.9%;
     left: 45.7%;
   }
   #fourth{
-    /* fill: red; */
+    fill: red;
     top: 19.8%;
     left: 69.5%;
   }
@@ -56,4 +56,11 @@ h1{
     position: relative;
       width: 500px;
       height: 500px;
+  }
+  .progress{
+    position: absolute;
+    top: 70.3%;  
+    transform-origin: bottom center;
+    /* transform: rotate(9deg); */
+    left: 1.7%;
   }
